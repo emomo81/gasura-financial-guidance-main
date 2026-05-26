@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@theme {
+  /* ─── Gasura Design System – "The Digital Estate" ─── */
+
+  /* Colors */
+  --color-primary: #00261b;
+  --color-primary-container: #0b3d2e;
+  --color-primary-fixed: #bcedd7;
+  --color-primary-fixed-dim: #a0d1bc;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #79a894;
+  --color-on-primary-fixed: #002116;
+  --color-on-primary-fixed-variant: #214f3f;
+  --color-inverse-primary: #a0d1bc;
+
+  --color-secondary: #735c00;
+  --color-secondary-container: #fed65b;
+  --color-secondary-fixed: #ffe088;
+  --color-secondary-fixed-dim: #e9c349;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #745c00;
+  --color-on-secondary-fixed: #241a00;
+  --color-on-secondary-fixed-variant: #574500;
+
+  --color-tertiary: #2b1e03;
+  --color-tertiary-container: #423314;
+  --color-tertiary-fixed: #f9dfb3;
+  --color-tertiary-fixed-dim: #dbc399;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #b19b73;
+  --color-on-tertiary-fixed: #261a01;
+  --color-on-tertiary-fixed-variant: #554424;
+
+  --color-surface: #f9f9f6;
+  --color-surface-dim: #dadad7;
+  --color-surface-bright: #f9f9f6;
+  --color-surface-variant: #e2e3e0;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f4f4f1;
+  --color-surface-container: #eeeeeb;
+  --color-surface-container-high: #e8e8e5;
+  --color-surface-container-highest: #e2e3e0;
+  --color-on-surface: #1a1c1b;
+  --color-on-surface-variant: #414944;
+  --color-on-background: #1a1c1b;
+  --color-background: #f9f9f6;
+  --color-inverse-surface: #2f312f;
+  --color-inverse-on-surface: #f1f1ee;
+
+  --color-outline: #717974;
+  --color-outline-variant: #c0c8c3;
+  --color-surface-tint: #396756;
+
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error: #ffffff;
+  --color-on-error-container: #93000a;
+
+  /* Fonts — injected as CSS vars from next/font in layout.tsx */
+  --font-headline: var(--font-noto-serif), serif;
+  --font-body: var(--font-manrope), sans-serif;
+  --font-label: var(--font-inter), sans-serif;
+}
+
+/* Material Symbols (Icon font — loaded separately, no font metric shift concern) */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Scrollbar hide */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-on-background);
+}
+
+/* Animated sound bars for voice UI */
+@keyframes soundBar {
+  0%, 100% { transform: scaleY(0.4); }
+  50% { transform: scaleY(1); }
+}
+.sound-bar {
+  display: inline-block;
+  width: 3px;
+  border-radius: 2px;
+  transform-origin: bottom;
+  animation: soundBar 0.8s ease-in-out infinite;
+}
+.sound-bar:nth-child(2) { animation-delay: 0.15s; }
+.sound-bar:nth-child(3) { animation-delay: 0.3s; }
+.sound-bar:nth-child(4) { animation-delay: 0.45s; }
